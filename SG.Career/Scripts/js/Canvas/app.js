@@ -32,6 +32,25 @@ class App {
         this.canvas.height = this.stageHeight * this.pixelRatio;
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
+        const xGap = 20;
+        const yGap = 20;
+        const x1 = xGap;
+        const x2 = this.stageWidth - xGap;
+        const total = Math.floor(this.stageHeight - yGap / yGap);
+
+        //this.strings = [];
+        //for (let i = 0; i < total; i++) {
+        //    this.strings[i] = new BounceString(
+        //        {
+        //            x1: x1,
+        //            y1: i * yGap + yGap,
+        //            x2: x2,
+        //            y2: i * yGap + yGap
+        //        },
+        //        '#ff5038'
+        //    )
+        //}
+
         this.strings = [
             new BounceString(
                 {
@@ -42,7 +61,8 @@ class App {
                 },
                 '#ff5038'
             )
-        ]
+
+        ];
     }
 
     animate() {
