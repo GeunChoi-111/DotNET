@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<input type="button" value="send" onclick="fn_SendEmail();"/>
+
+
+<script>
+
+    function fn_SendEmail() {
+
+        if (confirm("Are you sure?")) {
+
+            $.ajax({
+                type: "post",
+                url: "SendEmail",
+                dataType: "json",
+                data: '',
+                success: function (data) {
+                    alert("메일을 전송했습니다.");
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("메일 전송에 실패했습니다.");
+                    return false;
+                }
+            });
+        }
+    }
+
+</script>
